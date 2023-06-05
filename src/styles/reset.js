@@ -34,6 +34,11 @@ export const ResetCSS = createGlobalStyle`
     body {
         line-height: 1;
         font-family: var(--font-family);
+        width: 100vw;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
     ol, ul {
         list-style: none;

@@ -1,3 +1,4 @@
+import { Header } from './components/Header'
 import { GlobalCSS } from './styles/global'
 import { ResetCSS } from './styles/reset'
 
@@ -6,7 +7,7 @@ export const App = () => {
 		<>
 			<ResetCSS />
 			<GlobalCSS />
-			<h1>Teste</h1>
+			<Header />
     	</>
   	)
 }
