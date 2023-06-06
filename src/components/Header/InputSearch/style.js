@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledInputSearch = styled.div`
+export const StyledInputSearch = styled.form`
     position: relative;
 
     cursor: pointer;
@@ -35,7 +35,7 @@ export const StyledInputSearch = styled.div`
         }
     }
     
-    div {
+    button {
         display: flex;
         flex-direction: row;
         justify-content: center;

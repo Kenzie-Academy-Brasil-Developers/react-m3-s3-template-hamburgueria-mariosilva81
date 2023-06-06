@@ -1,13 +1,14 @@
-import { Header } from './components/Header'
-import { GlobalCSS } from './styles/global'
-import { ResetCSS } from './styles/reset'
+import { ResetStyle } from './styles/reset'
+import { GlobalStyle } from './styles/global'
+
+import { Home } from './pages/Home'
 
 export const App = () => {
   	return (
 		<>
-			<ResetCSS />
-			<GlobalCSS />
-			<Header />
+			<ResetStyle />
+			<GlobalStyle />
+			<Home />
     	</>
   	)
 }

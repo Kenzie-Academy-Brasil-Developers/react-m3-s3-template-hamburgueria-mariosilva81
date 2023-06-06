@@ -6,14 +6,23 @@ import { StyledHeader } from './style'
 
 import logo from '../../assets/images/logo.png'
 
-export const Header = () => {
+import { useState } from 'react'
+
+export const Header = ({ callback }) => {
+    const [inputSearch, setInputSearch] = useState('')
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        callback(inputSearch)
+    }
+    
     return (
-        <StyledHeader>
+        <StyledHeader >
             <div>
                 <ImageContainer src={logo} alt='Logo Burguer Kenzie, sendo Burguer na cor preto e Kenzie na cor vermelho coral' />
                 <Cart />    
             </div>
-            <InputSearch />       
+            <InputSearch onSubmit={handleSubmit} setInputSearch={setInputSearch}/>       
         </StyledHeader>
     )
 }
