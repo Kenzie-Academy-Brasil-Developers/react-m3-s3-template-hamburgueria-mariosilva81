@@ -5,13 +5,17 @@ import { StyledBody600, StyledCaption, StyledHeading3 } from '../../../styles/ty
 
 
 export const Product = ({ product }) => {
+    const price = product.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+    
     return (
         <StyledProduct>
             <ImageContainer src={product.img} alt={product.name} />
-            <StyledHeading3>{product.name}</StyledHeading3>
-            <StyledCaption>{product.category}</StyledCaption>
-            <StyledBody600>{product.price}</StyledBody600>
-            <button>Adicionar</button>            
+            <div>
+                <StyledHeading3>{product.name}</StyledHeading3>
+                <StyledCaption>{product.category}</StyledCaption>
+                <StyledBody600>{price}</StyledBody600>
+                <button>Adicionar</button>            
+            </div>
         </StyledProduct>
     )
 }
