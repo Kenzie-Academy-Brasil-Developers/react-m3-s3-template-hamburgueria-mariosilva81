@@ -1,10 +1,16 @@
 import { StyledImageContainer } from './style'
 
-export const ImageContainer = ({ src, alt, children }) => {
+export const ImageContainer = ({ src, alt, children, onClick }) => {
+    const handleClick = () => {
+        if (onClick) {
+        onClick();
+        }
+    }
+
     return (
-        <StyledImageContainer>
+        <StyledImageContainer onClick={handleClick}>
             <img src={src} alt={alt} />
             {children}
         </StyledImageContainer>
-    )
+  )
 }
