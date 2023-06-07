@@ -8,7 +8,7 @@ import logo from '../../assets/images/logo.png'
 
 import { useState } from 'react'
 
-export const Header = ({ callback }) => {
+export const Header = ({ callback, totalCart }) => {
     const [inputSearch, setInputSearch] = useState('')
 
     const handleSubmit = (event) => {
@@ -20,9 +20,9 @@ export const Header = ({ callback }) => {
         <StyledHeader >
             <div>
                 <ImageContainer src={logo} alt='Logo Burguer Kenzie, sendo Burguer na cor preto e Kenzie na cor vermelho coral' />
-                <Cart />    
+                <Cart totalCart={totalCart} />    
             </div>
-            <InputSearch onSubmit={handleSubmit} setInputSearch={setInputSearch}/>       
+            <InputSearch onSubmit={handleSubmit} setInputSearch={setInputSearch} />       
         </StyledHeader>
     )
 }

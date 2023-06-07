@@ -8,9 +8,7 @@ import { StyledBody600 } from '../../../styles/typography'
 
 import cartIcon from '../../../assets/icons/cart.png'
 
-export const Cart = () => {
-    const [totalCart, setTotalCart] = useState(0)
-
+export const Cart = ({ totalCart }) => {
     return (
         <StyledCart>
             <ImageContainer src={cartIcon} alt='Imagem de um carrinho de compras na cor cinza'>

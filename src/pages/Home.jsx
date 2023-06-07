@@ -9,6 +9,7 @@ export const Home = () => {
 	const [products, setProducts] = useState([])
 	const [isLoading, setIsLoading] = useState(true) 
 	const [search, setSearch] = useState('')
+	const [totalCart, setTotalCart] = useState(0)
 
 	useEffect(() => {
 		setIsLoading(true)
@@ -36,8 +37,8 @@ export const Home = () => {
 	
   	return (
 		<>
-			<Header callback={handleForm} />
-			<ProductsList products={products} isLoading={isLoading}/>
+			<Header callback={handleForm} totalCart={totalCart} />
+			<ProductsList products={products} isLoading={isLoading} totalCart={totalCart} setTotalCart={setTotalCart}/>
     	</>
   	)
 }
