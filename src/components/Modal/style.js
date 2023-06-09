@@ -26,4 +26,14 @@ export const StyledModal = styled.div`
         top: 1.25rem;
         right: 1.25rem;
     }
+
+    figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 18.75rem;
+        }
+    }
 `
