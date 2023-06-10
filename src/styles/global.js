@@ -19,4 +19,32 @@ export const GlobalStyle = createGlobalStyle`
 
         --font-family: 'Inter', sans-serif;
     }
+
+    .root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 2rem 7.3125rem;
+
+        box-sizing: border-box;
+
+        @media (max-width: 900px) {
+            margin: 1rem 2rem;
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+        }
+    }
 `

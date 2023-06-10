@@ -1,9 +1,7 @@
 import { Header } from '../components/Header'
-import { ModalCart } from '../components/ModalCart'
 import { ProductsList } from '../components/ProductsList'
-
+import { notifyError } from '../hooks/Toast'
 import { api } from '../services/api'
-
 import { useEffect, useState } from 'react'
 
 export const Home = () => {
@@ -11,9 +9,10 @@ export const Home = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const [search, setSearch] = useState('')
 	const [isModal, setIsModal] = useState(false)
+	const [counterCart, setCounterCart] = useState(0)
 
 	useEffect(() => {
-		setIsLoading(true);
+		setIsLoading(true)
 		
 		const getProducts = async () => {
 			try {
@@ -22,9 +21,14 @@ export const Home = () => {
 						name_like: search,
 					}
 				})
-				setProducts(response.data);
+				setProducts(response.data)
+
+				if (response.data.length === 0) {
+					notifyError('Nenhum produto encontrado. Pesquise novamente!')
+					
+				}
 			} catch (error) {
-				console.error(error)
+				notifyError(error)
 			} finally {
 				setIsLoading(false)
 			}
@@ -38,8 +42,21 @@ export const Home = () => {
 	
 	return (
 		<>
-			<Header callback={handleForm} setIsModal={setIsModal} />
-			<ProductsList products={products} isLoading={isLoading} isModal={isModal} setIsModal={setIsModal}/>
+			<Header 
+				callback={handleForm} 
+				setIsModal={setIsModal} 
+				counterCart={counterCart}
+			/>
+			<main>
+				<ProductsList 
+					products={products} 
+					isLoading={isLoading} 
+					isModal={isModal} 
+					setIsModal={setIsModal} 
+					counterCart={counterCart} 
+					setCounterCart={setCounterCart}
+				/>
+			</main>
 		</>
 	)
 }

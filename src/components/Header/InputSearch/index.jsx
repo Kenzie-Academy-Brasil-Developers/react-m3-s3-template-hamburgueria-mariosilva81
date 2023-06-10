@@ -1,5 +1,4 @@
 import { StyledInputSearch } from './style'
-
 import searchIcon from '../../../assets/icons/search.png'
 
 export const InputSearch = ({ setInputSearch, onSubmit }) => {  

@@ -5,14 +5,18 @@ export const StyledInputSearch = styled.form`
 
     cursor: pointer;
 
+    @media (max-width: 900px) {
+        width: 100%;
+    }
+
     input[type="text"] {
         box-sizing: border-box;
         
         justify-content: space-between;
         align-items: center;
+        gap: 7.1875rem;
 
         padding: 0 5.5rem 0 .9375rem;
-        gap: 7.1875rem;
 
         width: 22.8125rem;
         height: 3.75rem;
@@ -39,6 +43,10 @@ export const StyledInputSearch = styled.form`
             font-size: 1rem;
             line-height: 1.1875rem;
         }
+
+        @media (max-width: 900px) {
+            width: 100%;
+        }
     }
     
     button {
@@ -57,9 +65,9 @@ export const StyledInputSearch = styled.form`
         position: absolute;
         top: 50%;
         right: .75rem;
+        
         transform: translateY(-50%);
 
         cursor: pointer;
     }
-
 `

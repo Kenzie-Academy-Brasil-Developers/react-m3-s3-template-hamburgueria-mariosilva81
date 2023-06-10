@@ -1,7 +1,5 @@
 import { StyledProduct } from './style'
-
 import { ImageContainer } from '../../fragments/ImageContainer'
-
 import {
     StyledBody600,
     StyledCaption,
@@ -20,13 +18,13 @@ export const Product = ({ product, addToCart }) => {
 
     return (
         <StyledProduct id={product.id}>
-        <ImageContainer src={product.img} alt={product.name} />
-        <div>
-            <StyledHeading3>{product.name}</StyledHeading3>
-            <StyledCaption>{product.category}</StyledCaption>
-            <StyledBody600>{price}</StyledBody600>
-            <button onClick={handleAddToCart}>Adicionar</button>
-        </div>
+            <ImageContainer src={product.img} alt={product.name} />
+            <div>
+                <StyledHeading3>{product.name}</StyledHeading3>
+                <StyledCaption>{product.category}</StyledCaption>
+                <StyledBody600>{price}</StyledBody600>
+                <button onClick={handleAddToCart}>Adicionar</button>
+            </div>
         </StyledProduct>
     )
 }

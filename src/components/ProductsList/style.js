@@ -1,15 +1,18 @@
 import styled from 'styled-components'
 
 export const StyledProductsList = styled.ul`
-    margin: 2rem 5.25rem 2rem 9.25rem;
-
-    height: 800px;
-    /* width: 100%; */
-
-    border: 1px solid red;
+    height: 50rem;
+    width: 100%;
 
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 46px;
+    gap: 1.875rem;
+
+    @media (max-width: 1100px) {
+        overflow-x: auto;
+
+        height: 25.5rem;
+        
+        flex-wrap: nowrap;
+    }
 `

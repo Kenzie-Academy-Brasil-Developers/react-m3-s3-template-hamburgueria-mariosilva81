@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
 
     background-color: var(--color-grey-0);
 
-    padding: .625rem 7.3125rem .625rem 7.4431rem;
+    padding: .625rem 7.3125rem;
 
     div:first-child {
         width: 100%;
@@ -20,5 +20,15 @@ export const StyledHeader = styled.header`
         justify-content: space-between;
 
         margin-right: 1.5rem;
+
+        @media (max-width: 900px) {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1rem;
     }
 `

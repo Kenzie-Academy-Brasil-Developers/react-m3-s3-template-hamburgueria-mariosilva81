@@ -1,33 +1,46 @@
 import styled from 'styled-components'
 
 export const StyledModalCart = styled.div`
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        width: 100%;
-        height: 100vh;
+    width: 100%;
+    height: 100vh;
 
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0,0,0,.25);
-        backdrop-filter: blur(.3125rem);
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0,0,0,.25);
+
+    backdrop-filter: blur(.3125rem);
 
     div {
         width: 100%;
-        max-width: 500px;
+        max-width: 31.25rem;
+        height: 29rem;
+
         position: relative;
-        background: white;
+
+        background-color: white;
+
         box-sizing: border-box;
-        height: 28rem;
+
+        @media (max-width: 550px) {
+            width: 25rem;
+        }
         
         .header-container {
             position: relative;
+
             background-color: var(--color-primary);
+
             height: 3.375rem;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             padding: .8125rem 1.375rem;
 
             h3 {
@@ -38,39 +51,51 @@ export const StyledModalCart = styled.div`
                 color: rgba(255, 255, 255, 0.5);
                 background-color: transparent;
                 border: none;
+
                 cursor: pointer;
+
+                font-size: 1.2rem;
             }
         }
 
         .product-container {
             height: 60%;
+
             padding: 1.25rem 1.5rem 1.125rem;
+
             overflow-y: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
 
             li {
                 display: flex;
                 justify-content: space-between;
-                margin-bottom: 18px;
 
                 figure {
                     background-color: var(--color-grey-100);
+
                     width: 6rem;
-                    height: 5rem;
+
+                    border-radius: .3125rem;
 
                     img {
-                        width: 3.4375rem;
-                        height: 3.3431rem;
+                        width: 3.5rem;
                     }
                 }
 
                 div {
                     display: flex;
                     justify-content: space-between;
+
                     height: 5rem;
+
                     margin-left: .58rem;
 
                     img {
                         height: 1.2rem;
+
                         cursor: pointer;
                     }
                 }
@@ -80,8 +105,9 @@ export const StyledModalCart = styled.div`
 
         .total-container {
             border-top: 2px solid var(--color-grey-100);
+
             height: 15%;
-            width: 452px;
+            width: 28.25rem;
             
             padding: 1.25rem 0 1.125rem;
             margin: 0 1.5625rem;
@@ -92,10 +118,15 @@ export const StyledModalCart = styled.div`
             span + span {
                 color: var(--color-grey-300);
             }
+
+            @media (max-width: 550px) {
+                width: 21.875rem;
+            }
         }
 
         .button-container {
             height: 20%;
+
             padding: 0 1.4375rem 1rem;
 
             button {
@@ -103,19 +134,19 @@ export const StyledModalCart = styled.div`
                 width: 100%;
 
                 display: flex;
-                flex-direction: row;
                 justify-content: center;
                 align-items: center;
+
                 padding: 0 1.25rem;
 
                 font-weight: 600;
-                font-size: 16px;
+                font-size: 1rem;
 
                 background-color: var(--color-grey-100);
                 color: var(--color-grey-300);
                 
                 border: .125rem solid var(--color-grey-100);
-                border-radius: 8px;
+                border-radius: .5rem;
 
                 cursor: pointer;
 
@@ -134,8 +165,10 @@ export const StyledModalCart = styled.div`
         align-items: center;
         justify-content: center;
 
+        height: 85%;
+
         img {
-            width: 18.75rem;
+            width: 15rem;
         }
     }
 `

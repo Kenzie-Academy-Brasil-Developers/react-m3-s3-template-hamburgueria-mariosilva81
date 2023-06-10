@@ -1,14 +1,15 @@
 import { ImageContainer } from '../fragments/ImageContainer'
 import { Cart } from './Cart'
 import { InputSearch } from './InputSearch'
-
 import { StyledHeader } from './style'
-
 import logo from '../../assets/images/logo.png'
-
 import { useState } from 'react'
 
-export const Header = ({ callback, setIsModal }) => {
+export const Header = ({ 
+        callback, 
+        setIsModal, 
+        counterCart 
+    }) => {
     const [inputSearch, setInputSearch] = useState('')
 
     const handleSubmit = (event) => {
@@ -19,10 +20,19 @@ export const Header = ({ callback, setIsModal }) => {
     return (
         <StyledHeader >
             <div>
-                <ImageContainer src={logo} alt='Logo Burguer Kenzie, sendo Burguer na cor preto e Kenzie na cor vermelho coral' />
-                <Cart setIsModal={setIsModal} />    
+                <ImageContainer 
+                    src={logo} 
+                    alt='Logo Burguer Kenzie, sendo Burguer na cor preto e Kenzie na cor vermelho coral' 
+                />
+                <Cart 
+                    setIsModal={setIsModal} 
+                    counterCart={counterCart}
+                />    
             </div>
-            <InputSearch onSubmit={handleSubmit} setInputSearch={setInputSearch} />       
+            <InputSearch 
+                onSubmit={handleSubmit} 
+                setInputSearch={setInputSearch} 
+            />       
         </StyledHeader>
     )
 }

@@ -4,13 +4,14 @@ export const StyledProduct = styled.li`
     border: .125rem solid var(--color-grey-100);
     border-radius: .3125rem;
     
-    width: 18.75rem;
+    min-width: 16rem;
     height: 21.625rem;
 
     box-sizing: border-box;
 
     :hover {
         border: .125rem solid var(--color-primary);
+
         scale: 1.1;
 
         button {
@@ -73,7 +74,6 @@ export const StyledProduct = styled.li`
 
         img {
             height: 100%;
-        }
-        
+        } 
     }
 `
