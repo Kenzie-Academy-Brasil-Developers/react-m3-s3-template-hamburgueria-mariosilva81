@@ -10,7 +10,7 @@ export const Cart = ({ setIsModal }) => {
     return (
             <StyledCart>
                 <ImageContainer onClick={() => setIsModal(true)} src={cartIcon} alt='Imagem de um carrinho de compras na cor cinza'>
-                    <StyledBody600></StyledBody600>
+                    <StyledBody600>0</StyledBody600>
                 </ImageContainer>
             </StyledCart>
     )

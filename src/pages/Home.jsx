@@ -39,11 +39,7 @@ export const Home = () => {
 	return (
 		<>
 			<Header callback={handleForm} setIsModal={setIsModal} />
-			<ProductsList products={products} isLoading={isLoading} setIsOpen={setIsModal}/>
-			{isModal ?
-				<ModalCart setIsOpen={setIsModal} >
-				</ModalCart>
-			: null}
+			<ProductsList products={products} isLoading={isLoading} isModal={isModal} setIsModal={setIsModal}/>
 		</>
 	)
 }

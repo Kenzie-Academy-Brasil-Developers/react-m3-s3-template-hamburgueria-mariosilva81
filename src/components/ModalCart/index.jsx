@@ -1,17 +1,11 @@
 import { StyledModalCart } from './style'
-
+import trash from '../../assets/icons/trash.png'
 import { useOutsideClick } from '../../hooks/useOutsideClick'
 import { useKeyDown } from '../../hooks/useKeyDown'
 import { StyledBody600, StyledHeading3 } from '../../styles/typography'
+import { ImageContainer } from '../fragments/ImageContainer'
 
-
-export const ModalCart = ({ setIsOpen }) => {
-	// const [cartProducts, setCartProducts] = useState([])
-
-	// const addProductToCart = (product) => {
-	// 	setCartProducts([...cartProducts, product])
-	// }
-
+export const ModalCart = ({ setIsOpen, cartItems }) => {
 	const modalRef = useOutsideClick(() => {
 		setIsOpen(false)
 	})
@@ -35,13 +29,13 @@ export const ModalCart = ({ setIsOpen }) => {
 				>X</button>
 			</div>
 			<ul className='product-container'>
-				{/* {cartProducts.map((product) => (
-					<li key={product.id}>
-						<ImageContainer src={product.img} alt={product.name}/>
-						<StyledHeading3>{product.name}</StyledHeading3>
+				{cartItems.map((item) => (
+					<li key={item.id}>
+						<ImageContainer src={item.img} alt={item.name}/>
+						<StyledHeading3>{item.name}</StyledHeading3>
 						<ImageContainer src={trash} alt='Icone na cor cinza representando uma lixeira'/>
 					</li>
-				))} */}
+				))}
 			</ul>
 			<div className='total-container'>
 				<StyledBody600>Total</StyledBody600>

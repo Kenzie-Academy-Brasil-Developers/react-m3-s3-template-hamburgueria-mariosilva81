@@ -8,7 +8,11 @@ import {
     StyledHeading3,
 } from '../../../styles/typography'
 
-export const Product = ({ product, onAddToCart }) => {
+export const Product = ({ product, addToCart }) => {
+    const handleAddToCart = () => {
+        addToCart(product)
+    }
+
     const price = product.price.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
@@ -21,7 +25,7 @@ export const Product = ({ product, onAddToCart }) => {
             <StyledHeading3>{product.name}</StyledHeading3>
             <StyledCaption>{product.category}</StyledCaption>
             <StyledBody600>{price}</StyledBody600>
-            <button onClick={() => onAddToCart(product)}>Adicionar</button>
+            <button onClick={handleAddToCart}>Adicionar</button>
         </div>
         </StyledProduct>
     )
