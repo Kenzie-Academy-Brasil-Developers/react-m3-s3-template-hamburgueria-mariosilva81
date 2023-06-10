@@ -12,6 +12,10 @@ export const ProductsList = ({ products, isLoading, isModal, setIsModal }) => {
         setCartItems([...cartItems, product])
     }
 
+    const removeFromCart = (itemId) => {
+		setCartItems(cartItems.filter(item => item.id !== itemId))
+	}
+
     if (isLoading) {
         return <div>Loading...</div>
     }
@@ -24,7 +28,7 @@ export const ProductsList = ({ products, isLoading, isModal, setIsModal }) => {
             ))}
             </StyledProductsList>
             {isModal ?
-				<ModalCart setIsOpen={setIsModal} cartItems={cartItems}>
+				<ModalCart setIsOpen={setIsModal} cartItems={cartItems} removeFromCart={removeFromCart}>
 				</ModalCart>
 			: null}
         </>

@@ -5,7 +5,7 @@ import { useKeyDown } from '../../hooks/useKeyDown'
 import { StyledBody600, StyledHeading3 } from '../../styles/typography'
 import { ImageContainer } from '../fragments/ImageContainer'
 
-export const ModalCart = ({ setIsOpen, cartItems }) => {
+export const ModalCart = ({ setIsOpen, cartItems, removeFromCart }) => {
 	const modalRef = useOutsideClick(() => {
 		setIsOpen(false)
 	})
@@ -14,18 +14,22 @@ export const ModalCart = ({ setIsOpen, cartItems }) => {
 		element.click()
 	})
 
+	const handleRemoveFromCart = (itemId) => {
+		removeFromCart(itemId)
+	}
+
 	return (
 		<StyledModalCart role="dialog">
 		<div ref={modalRef}>
 			<div className='header-container'>
 				<StyledHeading3>Carrinho de compras</StyledHeading3>
 				<button
-				ref={buttonRef}
-				type='submit'
-				onClick={(event) => {
-					event.preventDefault()
-					setIsOpen(false)
-				}}
+					ref={buttonRef}
+					type='submit'
+					onClick={(event) => {
+						event.preventDefault()
+						setIsOpen(false)
+					}}
 				>X</button>
 			</div>
 			<ul className='product-container'>
@@ -34,7 +38,11 @@ export const ModalCart = ({ setIsOpen, cartItems }) => {
 						<ImageContainer src={item.img} alt={item.name}/>
 						<div>
 							<StyledHeading3>{item.name}</StyledHeading3>
-							<img src={trash} alt='Icone na cor cinza representando uma lixeira'/>
+							<img 
+								src={trash} 
+								alt='Icone na cor cinza representando uma lixeira'
+								onClick={() => handleRemoveFromCart(item.id)}
+							/>
 						</div>
 					</li>
 				))}
