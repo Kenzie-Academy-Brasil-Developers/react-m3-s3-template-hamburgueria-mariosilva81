@@ -19,7 +19,7 @@ export const StyledModalCart = styled.div`
         position: relative;
         background: white;
         box-sizing: border-box;
-        height: 25.6875rem;
+        height: 28rem;
         
         .header-container {
             position: relative;
@@ -46,6 +46,36 @@ export const StyledModalCart = styled.div`
             height: 60%;
             padding: 1.25rem 1.5rem 1.125rem;
             overflow-y: auto;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 18px;
+
+                figure {
+                    background-color: var(--color-grey-100);
+                    width: 6rem;
+                    height: 5rem;
+
+                    img {
+                        width: 3.4375rem;
+                        height: 3.3431rem;
+                    }
+                }
+
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    height: 5rem;
+                    margin-left: .58rem;
+
+                    img {
+                        height: 1.2rem;
+                        cursor: pointer;
+                    }
+                }
+
+            }
         }
 
         .total-container {

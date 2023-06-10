@@ -32,8 +32,10 @@ export const ModalCart = ({ setIsOpen, cartItems }) => {
 				{cartItems.map((item) => (
 					<li key={item.id}>
 						<ImageContainer src={item.img} alt={item.name}/>
-						<StyledHeading3>{item.name}</StyledHeading3>
-						<ImageContainer src={trash} alt='Icone na cor cinza representando uma lixeira'/>
+						<div>
+							<StyledHeading3>{item.name}</StyledHeading3>
+							<img src={trash} alt='Icone na cor cinza representando uma lixeira'/>
+						</div>
 					</li>
 				))}
 			</ul>
