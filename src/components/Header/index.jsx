@@ -8,7 +8,7 @@ import logo from '../../assets/images/logo.png'
 
 import { useState } from 'react'
 
-export const Header = ({ callback, totalCart, setIsModal }) => {
+export const Header = ({ callback, setIsModal }) => {
     const [inputSearch, setInputSearch] = useState('')
 
     const handleSubmit = (event) => {
@@ -20,7 +20,7 @@ export const Header = ({ callback, totalCart, setIsModal }) => {
         <StyledHeader >
             <div>
                 <ImageContainer src={logo} alt='Logo Burguer Kenzie, sendo Burguer na cor preto e Kenzie na cor vermelho coral' />
-                <Cart setIsModal={setIsModal} totalCart={totalCart} />    
+                <Cart setIsModal={setIsModal} />    
             </div>
             <InputSearch onSubmit={handleSubmit} setInputSearch={setInputSearch} />       
         </StyledHeader>

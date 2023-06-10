@@ -1,25 +1,28 @@
 import { StyledProduct } from './style'
+
 import { ImageContainer } from '../../fragments/ImageContainer'
 
-import { StyledBody600, StyledCaption, StyledHeading3 } from '../../../styles/typography'
+import {
+    StyledBody600,
+    StyledCaption,
+    StyledHeading3,
+} from '../../../styles/typography'
 
+export const Product = ({ product, onAddToCart }) => {
+    const price = product.price.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    })
 
-export const Product = ({ product, totalCart, setTotalCart }) => {
-    const price = product.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-
-    const handleAddToCart = () => {
-        setTotalCart(totalCart + 1);
-    }
-    
     return (
         <StyledProduct id={product.id}>
-            <ImageContainer src={product.img} alt={product.name} />
-            <div>
-                <StyledHeading3>{product.name}</StyledHeading3>
-                <StyledCaption>{product.category}</StyledCaption>
-                <StyledBody600>{price}</StyledBody600>
-                <button onClick={handleAddToCart}>Adicionar</button>            
-            </div>
+        <ImageContainer src={product.img} alt={product.name} />
+        <div>
+            <StyledHeading3>{product.name}</StyledHeading3>
+            <StyledCaption>{product.category}</StyledCaption>
+            <StyledBody600>{price}</StyledBody600>
+            <button onClick={() => onAddToCart(product)}>Adicionar</button>
+        </div>
         </StyledProduct>
     )
 }
