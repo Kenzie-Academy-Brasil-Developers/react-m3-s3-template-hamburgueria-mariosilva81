@@ -27,7 +27,8 @@ export const StyledModalCart = styled.div`
         box-sizing: border-box;
 
         @media (max-width: 550px) {
-            width: 25rem;
+            max-width: 90vw;
+            max-height: 70vh;
         }
         
         .header-container {
@@ -120,7 +121,7 @@ export const StyledModalCart = styled.div`
             }
 
             @media (max-width: 550px) {
-                width: 21.875rem;
+                max-width: 78vw;
             }
         }
 
@@ -168,7 +169,7 @@ export const StyledModalCart = styled.div`
         height: 85%;
 
         img {
-            width: 15rem;
+            max-width: 60%;
         }
     }
 `
